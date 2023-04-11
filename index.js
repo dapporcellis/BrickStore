@@ -18,6 +18,10 @@ app.use(session({
 }));
 app.use(flash())
 
+const empresaRoute = require('./routes/empresaRoute')
+
+app.use(empresaRoute)
+
 app.listen(port, ()=>{
     console.log("Serving on port " + port);
 })
