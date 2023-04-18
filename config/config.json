@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "brikstore",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "brikstore_test",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "brikstore_production",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}
