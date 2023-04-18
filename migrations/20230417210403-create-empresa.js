@@ -10,12 +10,15 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       nome: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       email: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       registro: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       logo: {
@@ -28,6 +31,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       senha: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       createdAt: {
