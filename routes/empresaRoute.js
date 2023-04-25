@@ -4,5 +4,6 @@ const controller = require('../controller/empresaController')
 
 routes.get('/empresa', controller.abrelogin)
 routes.get('/cadastraempresa', controller.abrecadastro)
+routes.post('/cadastraempresa', controller.cadastrar)
 
 module.exports = routes
