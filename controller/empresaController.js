@@ -2,7 +2,7 @@ const models = require('../models/index')
 const Empresa = models.Empresa
 
 async function abrelogin(req, res, next) {
-    res.render('empresa/login')
+    res.render('empresa/login', {msg:req.flash('msg')})
 }
 
 async function abrecadastro(req, res, next) {
@@ -20,12 +20,15 @@ async function cadastrar(req, res, next) {
         endereco: req.body.endereco
     }).catch(function (err) {
         if(err){
-            req.flash('msg','Problemas ao cadastrar a empresa: '+this.nome)
-        }else{
-            req.flash('msg','Você cadastrou a empresa: '+this.nome)
+            console.log(err)
+            req.flash('msg','Problemas ao cadastrar a empresa: '+req.body.nome)
+            return res.redirect('/empresa')
         }
     })
-    res.redirect('/empresa')
+    if (empresa) {
+        req.flash('msg', 'Você cadastrou a empresa: ' + empresa.nome)
+        return res.redirect('/empresa')
+    }
 }
 
 module.exports = {

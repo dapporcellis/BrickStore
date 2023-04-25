@@ -179,6 +179,15 @@
                 </div>
                 <p class="text-sm mt-3 mb-0">Quer se cadastrar? <a href="/cadastraempresa" class="text-dark font-weight-bolder">Cadastro</a></p>
               </form>
+              <%if(typeof msg !== "undefined"){%>
+                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                  <span class="alert-icon"><i class="ni ni-like-2"></i></span>
+                  <span class="alert-text"><strong>Atenção!</strong> <%=msg%></span>
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+              <%}%>
             </div>
           </div>
         </div>
