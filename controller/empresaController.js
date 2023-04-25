@@ -18,8 +18,13 @@ async function cadastrar(req, res, next) {
         registro: req.body.registro,
         telefone: req.body.telefone,
         endereco: req.body.endereco
+    }).catch(function (err) {
+        if(err){
+            req.flash('msg','Problemas ao cadastrar a empresa: '+this.nome)
+        }else{
+            req.flash('msg','Você cadastrou a empresa: '+this.nome)
+        }
     })
-    req.flash('msg','Você cadastrou a empresa: '+empresa.nome)
     res.redirect('/empresa')
 }
 
