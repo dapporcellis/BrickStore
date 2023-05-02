@@ -1,5 +1,6 @@
 const models = require('../models/index')
 const Empresa = models.Empresa
+const bcrypt = require('bcrypt')
 
 async function abrelogin(req, res, next) {
     res.render('empresa/login', {msg:req.flash('msg')})
@@ -10,11 +11,17 @@ async function abrecadastro(req, res, next) {
 }
 
 async function cadastrar(req, res, next) {
+
+    const salt = bcrypt.genSaltSync(10);
+    console.log('salt: '+salt)
+    const senha = bcrypt.hashSync(req.body.senha, salt);
+    console.log('senha: '+senha)
+    
     let empresa = await Empresa.create({
         nome: req.body.nome,
         email: req.body.email,
-        senha: req.body.senha,
-        logo: req.body.logo,
+        senha: senha,
+        logo: req.file.filename,
         registro: req.body.registro,
         telefone: req.body.telefone,
         endereco: req.body.endereco
