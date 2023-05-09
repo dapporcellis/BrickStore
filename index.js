@@ -7,8 +7,7 @@ const moment = require('moment')
 require('dotenv').config()
 app.locals.moment = moment;
 const port = process.env.PORT || 3000;
-const passport = require('passport')
-const passport1 = require('./config/passport')
+const passport = require('./config/passport')
 
 app.use(express.urlencoded({ extended:true }))
 app.set('view engine', 'ejs')
@@ -18,8 +17,8 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
 }));
-app.use(passport1.initialize());
-app.use(passport1.session());
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(flash())
 
 
