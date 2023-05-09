@@ -1,6 +1,7 @@
 const models = require('../models/index')
 const Empresa = models.Empresa
 const bcrypt = require('bcrypt')
+const passport = require('../config/passport')
 
 async function abrelogin(req, res, next) {
     res.render('empresa/login', {msg:req.flash('msg')})
@@ -37,6 +38,7 @@ async function cadastrar(req, res, next) {
         return res.redirect('/empresa')
     }
 }
+
 
 module.exports = {
     abrelogin,
