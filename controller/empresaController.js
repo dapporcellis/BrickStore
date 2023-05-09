@@ -39,8 +39,13 @@ async function cadastrar(req, res, next) {
     }
 }
 
+async function perfil(req, res){
+    res.render('empresa/perfil')
+}
+
 
 module.exports = {
+    perfil,
     abrelogin,
     abrecadastro,
     cadastrar
