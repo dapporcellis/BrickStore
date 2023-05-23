@@ -200,7 +200,8 @@
                                     <a class="dropdown-item border-radius-md" href="javascript:;">
                                         <div class="d-flex py-1">
                                             <div class="my-auto">
-                                                <img src="/empresa/assets/img/team-2.jpg" class="avatar avatar-sm  me-3 ">
+                                                <img src="/empresa/assets/img/team-2.jpg"
+                                                    class="avatar avatar-sm  me-3 ">
                                             </div>
                                             <div class="d-flex flex-column justify-content-center">
                                                 <h6 class="text-sm font-weight-normal mb-1">
@@ -284,78 +285,61 @@
                         <div class="card-header pb-0">
                             <div class="row">
                                 <div class="col-8">
-                                    <h6>Authors table</h6>
+                                    <h6>Adicionando Produtos</h6>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body">
-                            <p class="text-uppercase text-sm">User Information</p>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="example-text-input" class="form-control-label">Username</label>
-                                        <input class="form-control" type="text" value="lucky.jesse">
+                            <form method="post" enctype="multipart/form-data">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="example-text-input" class="form-control-label">Nome</label>
+                                            <input class="form-control" type="text" name="nome">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="example-text-input" class="form-control-label">Descrição</label>
+                                            <textarea name="descricao" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="example-text-input" class="form-control-label">Foto</label>
+                                            <input class="form-control form-control-file" name="foto" type="file">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="example-text-input" class="form-control-label">Valor</label>
+                                            <input class="form-control" type="number" step="0.01" name="valor">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="example-text-input" class="form-control-label">Categoria</label>
+                                            <select name="categoria" class="form-control">
+                                                <option value="Roupa">Roupa</option>
+                                                <option value="Eletrônicos">Eletrônicos</option>
+                                                <option value="Moveis">Móveis</option>
+                                                <option value="Livros">Livros</option>
+                                                <option value="Alimentos">Alimentos</option>
+                                                <option value="Outros">Outros</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="ativo"
+                                                id="fcustomCheck1">
+                                            <label class="custom-control-label" for="customCheck1">Ativo?</label>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="example-text-input" class="form-control-label">Email address</label>
-                                        <input class="form-control" type="email" value="jesse@example.com">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="example-text-input" class="form-control-label">First name</label>
-                                        <input class="form-control" type="text" value="Jesse">
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="example-text-input" class="form-control-label">Last name</label>
-                                        <input class="form-control" type="text" value="Lucky">
-                                    </div>
-                                </div>
-                            </div>
-                            <hr class="horizontal dark">
-                            <p class="text-uppercase text-sm">Contact Information</p>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="example-text-input" class="form-control-label">Address</label>
-                                        <input class="form-control" type="text"
-                                            value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="example-text-input" class="form-control-label">City</label>
-                                        <input class="form-control" type="text" value="New York">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="example-text-input" class="form-control-label">Country</label>
-                                        <input class="form-control" type="text" value="United States">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="example-text-input" class="form-control-label">Postal code</label>
-                                        <input class="form-control" type="text" value="437300">
-                                    </div>
-                                </div>
-                            </div>
-                            <hr class="horizontal dark">
-                            <p class="text-uppercase text-sm">About me</p>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="example-text-input" class="form-control-label">About me</label>
-                                        <input class="form-control" type="text"
-                                            value="A beautiful Dashboard for Bootstrap 5. It is Free and Open Source.">
-                                    </div>
-                                </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
