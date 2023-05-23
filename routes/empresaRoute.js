@@ -9,11 +9,13 @@ routes.post('/cadastraempresa', upload.single('logo'), controller.cadastrar)
 
 routes.get('/empresa', controller.abrelogin)
 routes.post('/empresa', passport.authenticate('local', {
-    successRedirect : '/perfil', 
+    successRedirect : '/empresa/perfil', 
     failureRedirect : '/empresa',
     failureFlash : true 
 }))
 
-routes.get('/perfil', controller.perfil)
+routes.get('/empresa/perfil', controller.perfil)
+
+routes.get('/empresa/produtos', controller.produtos)
 
 module.exports = routes

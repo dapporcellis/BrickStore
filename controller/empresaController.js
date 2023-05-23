@@ -43,8 +43,13 @@ async function perfil(req, res){
     res.render('empresa/perfil')
 }
 
+async function produtos(req, res){
+    res.render('empresa/produtos')
+}
+
 
 module.exports = {
+    produtos,
     perfil,
     abrelogin,
     abrecadastro,
