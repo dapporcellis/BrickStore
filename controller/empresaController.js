@@ -47,8 +47,13 @@ async function produtos(req, res){
     res.render('empresa/produtos')
 }
 
+async function addproduto(req, res){
+    res.render('empresa/addproduto')
+}
+
 
 module.exports = {
+    addproduto,
     produtos,
     perfil,
     abrelogin,

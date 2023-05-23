@@ -18,4 +18,6 @@ routes.get('/empresa/perfil', controller.perfil)
 
 routes.get('/empresa/produtos', controller.produtos)
 
+routes.get('/empresa/addproduto', controller.addproduto)
+
 module.exports = routes
