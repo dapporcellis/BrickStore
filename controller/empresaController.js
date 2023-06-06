@@ -1,7 +1,9 @@
 const models = require('../models/index')
 const Empresa = models.Empresa
+const Produto = models.Produto
 const bcrypt = require('bcrypt')
 const passport = require('../config/passport')
+const { DOUBLE } = require('sequelize')
 
 async function abrelogin(req, res, next) {
     res.render('empresa/login', {msg:req.flash('msg')})
@@ -51,8 +53,22 @@ async function addproduto(req, res){
     res.render('empresa/addproduto')
 }
 
+async function salvarproduto(req, res){
+    const produto = new Produto()
+    produto.nome = req.body.nome
+    produto.descricao = req.body.descricao
+    produto.categoria = req.body.categoria
+    produto.valor = parseFloat(req.body.valor)
+    produto.ativo = Boolean(req.body.ativo)
+    produto.foto = req.file.filename
+    produto.usuarioId = req.user.id
+    await produto.save()
+    res.redirect('/empresa/produtos')
+}
+
 
 module.exports = {
+    salvarproduto,
     addproduto,
     produtos,
     perfil,

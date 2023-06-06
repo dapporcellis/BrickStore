@@ -19,5 +19,7 @@ routes.get('/empresa/perfil', controller.perfil)
 routes.get('/empresa/produtos', controller.produtos)
 
 routes.get('/empresa/addproduto', controller.addproduto)
+routes.post('/empresa/addproduto', upload.single('foto'), controller.salvarproduto)
+
 
 module.exports = routes
