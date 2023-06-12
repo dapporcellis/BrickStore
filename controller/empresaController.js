@@ -46,7 +46,8 @@ async function perfil(req, res){
 }
 
 async function produtos(req, res){
-    res.render('empresa/produtos')
+    const produtos = await Produto.findAll()
+    res.render('empresa/produtos', {Produtos: produtos})
 }
 
 async function addproduto(req, res){
