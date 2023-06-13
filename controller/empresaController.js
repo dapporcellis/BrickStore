@@ -46,7 +46,9 @@ async function perfil(req, res){
 }
 
 async function produtos(req, res){
-    const produtos = await Produto.findAll()
+    const produtos = await Produto.findAll({where: {
+        usuarioId: req.user.id
+    }})
     res.render('empresa/produtos', {Produtos: produtos})
 }
 
@@ -67,8 +69,14 @@ async function salvarproduto(req, res){
     res.redirect('/empresa/produtos')
 }
 
+async function editaproduto(req, res) {
+    const produto = await Produto.findByPk(req.params.id)
+    console.log(produto)
+    res.render('empresa/editaproduto', {Produto: produto})
+}
 
 module.exports = {
+    editaproduto,
     salvarproduto,
     addproduto,
     produtos,
