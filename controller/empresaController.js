@@ -42,18 +42,21 @@ async function cadastrar(req, res, next) {
 }
 
 async function perfil(req, res){
-    res.render('empresa/perfil')
+    const empresa = await Empresa.findByPk(req.user.id)
+    res.render('empresa/perfil', {Empresa:empresa})
 }
 
 async function produtos(req, res){
+    const empresa = await Empresa.findByPk(req.user.id)
     const produtos = await Produto.findAll({where: {
         usuarioId: req.user.id
     }})
-    res.render('empresa/produtos', {Produtos: produtos})
+    res.render('empresa/produtos', {Produtos: produtos,Empresa:empresa})
 }
 
 async function addproduto(req, res){
-    res.render('empresa/addproduto')
+    const empresa = await Empresa.findByPk(req.user.id)
+    res.render('empresa/addproduto',{Empresa:empresa})
 }
 
 async function salvarproduto(req, res){
@@ -70,9 +73,10 @@ async function salvarproduto(req, res){
 }
 
 async function editaproduto(req, res) {
+    const empresa = await Empresa.findByPk(req.user.id)
     const produto = await Produto.findByPk(req.params.id)
     console.log(produto)
-    res.render('empresa/editaproduto', {Produto: produto})
+    res.render('empresa/editaproduto', {Produto: produto,Empresa:empresa})
 }
 
 module.exports = {
