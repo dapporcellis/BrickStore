@@ -23,8 +23,12 @@ app.use(flash())
 
 
 const empresaRoute = require('./routes/empresaRoute')
-
 app.use(empresaRoute)
+
+const clienteRoute = require('./routes/clienteRoute')
+app.use(clienteRoute)
+
+
 
 app.listen(port, ()=>{
     console.log("Serving on port " + port);
