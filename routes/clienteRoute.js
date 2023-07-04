@@ -5,7 +5,7 @@ const controller = require('../controller/clienteController')
 routes.get('/', controller.principal)
 routes.get('/produto/:id', controller.detalhe)
 routes.get('/logar', controller.abrecadastro)
-routes.post('/logar', controller.abrecadastro)
-routes.get('/logar', controller.abrecadastro)
+routes.post('/logar', controller.login)
+routes.get('/cadastrar', controller.cadastro)
 
 module.exports = routes
