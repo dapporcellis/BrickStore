@@ -12,7 +12,7 @@ async function detalhe(req,res){
 }
 
 async function abrecadastro(req,res){
-
+    res.render('cliente/cadastro')
 }
 
 async function cadastro(req,res){
