@@ -11,7 +11,22 @@ async function detalhe(req,res){
     res.render('cliente/detalhe',{Produto:produto})
 }
 
+async function abrecadastro(req,res){
+
+}
+
+async function cadastro(req,res){
+
+}
+
+async function login(req,res){
+
+}
+
 module.exports = {
     principal,
-    detalhe
+    detalhe,
+    abrecadastro,
+    cadastro,
+    login
 }
