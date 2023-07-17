@@ -1,5 +1,7 @@
 const models = require('../models/index')
 const Produto = models.Produto
+const Cliente = models.Cliente
+
 
 async function principal(req,res){
     const produtos = await Produto.findAll()
@@ -16,7 +18,24 @@ async function abrecadastro(req,res){
 }
 
 async function cadastro(req,res){
-    
+    let cliente = await Cliente.create({
+        nome:req.body.nome,
+        email:req.body.email,
+        senha:req.body.senha,
+        endereco:req.body.endereco,
+        cpf:req.body.cpf,
+        foto:req.file.filename
+    }).catch(function (err) {
+        if(err){
+            console.log(err)
+            req.flash('msg','Problemas ao cadastrar o cliente: '+req.body.nome)
+            return res.redirect('/logar')
+        }
+    })
+    if (cliente) {
+        req.flash('msg', 'Você cadastrou o cliente: ' + cliente.nome)
+        return res.redirect('/logar')
+    }
 }
 
 async function login(req,res){
