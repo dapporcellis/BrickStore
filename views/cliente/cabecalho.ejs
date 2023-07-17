@@ -50,7 +50,15 @@
                 </ul>
                 <ul class="header-links pull-right">
                     <li><a href="#"><i class="fa fa-dollar"></i> R$</a></li>
-                    <li><a href="#"><i class="fa fa-user-o"></i> Minha conta</a></li>
+
+                    <li><a href="#"><i class="fa fa-user-o"></i> 
+                        <%if(typeof Cliente !== "undefined"){%>
+                            <%=Cliente.nome%>
+                            <%}else{%>
+                                Entrar
+                            <%}%>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

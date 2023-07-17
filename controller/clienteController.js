@@ -4,8 +4,12 @@ const Cliente = models.Cliente
 
 
 async function principal(req,res){
+    let cliente;
+    if(!req.user.tipo){
+        cliente = await Cliente.findByPk(req.user.id)
+    }
     const produtos = await Produto.findAll()
-    res.render('cliente/principal',{Produtos:produtos})
+    res.render('cliente/principal',{Produtos:produtos, Cliente:cliente})
 }
 
 async function detalhe(req,res){

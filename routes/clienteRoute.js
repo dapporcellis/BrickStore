@@ -7,7 +7,7 @@ const passport2 = require('../config/passport2')
 routes.get('/', controller.principal)
 routes.get('/produto/:id', controller.detalhe)
 routes.get('/logar', controller.abrecadastro)
-routes.post('/logar', passport.authenticate('local', {
+routes.post('/logar', passport2.authenticate('local', {
     successRedirect : '/', 
     failureRedirect : '/logar',
     failureFlash : true 
