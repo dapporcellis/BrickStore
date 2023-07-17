@@ -2,8 +2,6 @@ const models = require('../models/index')
 const Empresa = models.Empresa
 const Produto = models.Produto
 const bcrypt = require('bcrypt')
-const passport = require('../config/passport')
-const { DOUBLE } = require('sequelize')
 
 async function abrelogin(req, res, next) {
     res.render('empresa/login', {msg:req.flash('msg')})
