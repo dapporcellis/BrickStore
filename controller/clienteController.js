@@ -16,7 +16,7 @@ async function abrecadastro(req,res){
 }
 
 async function cadastro(req,res){
-
+    
 }
 
 async function login(req,res){
